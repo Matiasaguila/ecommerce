@@ -17,7 +17,7 @@ class CreateColorSizeTable extends Migration
             $table->id();
 
             $table->foreignId('color_id')->references('id')->on('colors');
-       
+
             $table->foreignId('size_id')->references('id')->on('sizes');
             $table->integer('quantity');
             $table->timestamps();

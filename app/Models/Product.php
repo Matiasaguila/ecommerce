@@ -26,4 +26,13 @@ protected $fillable = ['name', 'slug', 'description', 'price', 'subcategory_id',
     public function colors(){
         return $this->belongsToMany(Color::class)->withPivot('quantity');
     }
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
+    //URL AMIGABLES
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

@@ -26,6 +26,5 @@ class AppServiceProvider extends ServiceProvider
     {
         $faker = $this->app->make(Generator::class);
         $faker->addProvider(new \Mmo\Faker\PicsumProvider($faker));
-
     }
 }

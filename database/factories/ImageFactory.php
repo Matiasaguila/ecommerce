@@ -13,10 +13,10 @@ class ImageFactory extends Factory
      */
     public function definition()
     {
-        return [
+        return array(
 
-                'url' => 'products/' . $this->faker->picsum(storage_path('app/public/products'), 640, 480, null, false)
+                'image' => 'subcategories/' . $this->faker->picsum(storage_path('app/public/products'), 640, 480, null, false)
 
-        ];
+        );
     }
 }

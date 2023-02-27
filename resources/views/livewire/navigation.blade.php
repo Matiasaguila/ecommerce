@@ -13,6 +13,8 @@ Categorías
         <x-jet-application-mark class="block h-9 w-auto" />
         </a>
         @livewire('search')
+        @auth
+
         <div class="ml-3 relative">
             <x-jet-dropdown align="right" width="48">
                 <x-slot name="trigger">
@@ -46,6 +48,7 @@ Categorías
                     </form>
                 </x-slot>
             </x-jet-dropdown>
+            @endauth
         </div>
 
     </div>

@@ -1533,6 +1533,10 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
 }
+.bg-orange-500 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(249, 115, 22, var(--tw-bg-opacity));
+}
 .bg-trueGray-700 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(64, 64, 64, var(--tw-bg-opacity));

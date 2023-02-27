@@ -13,5 +13,7 @@ Categorías
         <x-jet-application-mark class="block h-9 w-auto" />
         </a>
         @livewire('search')
+
+
     </div>
 </header>

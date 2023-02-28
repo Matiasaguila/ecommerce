@@ -82,7 +82,7 @@ Categorías
     </div>
     <nav id="navigation-menu" class="bg-trueGray-700 bg-opacity-25 w-full absolute">
         <div class="container-menu h-full">
-            <div class="grid grid-cols-4 h-full">
+            <div class="grid grid-cols-4 h-full relative">
                 <ul class="bg-white">
                     @foreach($categories as $category)
                         <li class="text-trueGray-500 hover:bg-orange-500 hover:text-white">
@@ -92,6 +92,8 @@ Categorías
                                 </span>
                                 {{ $category->name }}
                             </a>
+                            <div class="bg-red-500 absolute w-3/4 h-full top-0 right-0">
+                            </div>
                         </li>
                     @endforeach
 

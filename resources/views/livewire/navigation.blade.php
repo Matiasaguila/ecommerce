@@ -72,5 +72,7 @@ Categorías
             @endauth
         </div>
 
+        @livewire('dropdown-cart')
+
     </div>
 </header>

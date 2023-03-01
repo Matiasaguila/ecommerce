@@ -113,3 +113,17 @@ Categorías
         </div>
     </nav>
 </header>
+<script>
+
+    function dropdown() {
+        return {
+            open: false,
+            show() {
+                this.open = true;
+            },
+            hide() {
+                this.open = false;
+            }
+        }
+    }
+</script>

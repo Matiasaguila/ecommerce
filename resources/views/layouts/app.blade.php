@@ -35,7 +35,7 @@
         @stack('modals')
 
         @livewireScripts
-        
+
         <script>
             function dropdown(){
                 return {

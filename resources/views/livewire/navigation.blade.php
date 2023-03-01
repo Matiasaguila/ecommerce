@@ -1,11 +1,3 @@
-<style>
-    #navigation-menu{
-        height: calc(100vh - 4rem);
-    }
-    .navigation-link:hover .navigation-submenu{
-        display: block !important;
-    }
-</style>
 <header class="bg-trueGray-700 sticky top-0" x-data="dropdown()">
     <div class="container-menu flex items-center h-16">
         <a

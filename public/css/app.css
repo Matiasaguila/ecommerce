@@ -1085,6 +1085,12 @@ select {
 		padding-right: 2rem;
 	}
 }
+#navigation-menu{
+        height: calc(100vh - 4rem);
+    }
+.navigation-link:hover .navigation-submenu{
+        display: block !important;
+    }
 .fixed {
 	position: fixed;
 }
@@ -2313,3 +2319,5 @@ select {
 		padding-right: 2rem;
 	}
 }
+
+

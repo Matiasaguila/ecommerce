@@ -29,5 +29,11 @@ protected $fillable = ['name', 'slug', 'description', 'price', 'subcategory_id',
     public function images(){
         return $this->morphMany(Image::class, 'imageable');
     }
+    //url amigable
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 
 }

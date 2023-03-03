@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div>
-                <h1 class="text-xl font-bold text-trueGray-700">{{ $product->name }}</h1>
+                <h1 class="text-xl font-bold text-trueGray-700">{{ $product->name a }}</h1>
                 <div class="flex">
                     <p class="text-trueGray-700">Marca: <a class="underline capitalize hover:text-orange-500" href="">{{
 $product->brand->name }}</a></p>

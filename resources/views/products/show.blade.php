@@ -23,9 +23,9 @@ $product->brand->name }}</a></p>
                 <p class="text-2xl font-semibold text-trueGray-700 my-4">{{ $product->price }} &euro;</p>
                 <div class="bg-white rounded-lg shadow-lg mb-6">
                     <div class="flex items-center p-4">
- <span class="flex items-center justify-center h-10 w-10 rounded-full bg-lime-600">
- <i class="fas fa-truck text-sm text-white"></i>
- </span>
+                             <span class="flex items-center justify-center h-10 w-10 rounded-full bg-lime-600">
+                                <i class="fas fa-truck text-sm text-white"></i>
+                            </span>
                         <div class="ml-4">
                             <p class="text-lg font-semibold text-lime-600">Se hacen envíos solo a la península</p>
                             <p>Recíbelo el {{ now()->addDay(7)->format('l j F') }}</p>

@@ -16,7 +16,10 @@
         <link rel="stylesheet" href="{{ asset('vendor/glider-js/glider.min.css')}}">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           <link rel="stylesheet" href="{{ asset('vendor/flexSlider/flexslider.css')}}">
+=======
+>>>>>>> parent of 5fd7a3f (flexslider)
 =======
 >>>>>>> parent of 5fd7a3f (flexslider)
 =======
@@ -28,10 +31,13 @@
         <script src="{{ asset('vendor/glider-js/glider.min.js') }}" defer></script>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <script src="{{ asset('vendor/flexSlider/jquery.flexslider-min.js') }}" ></script>
         <script src="{{ asset('vendor/flexSlider/node_modules/jquery/dist/jquery.min.js) }}" ></script>
          </head>
 =======
+=======
+>>>>>>> parent of 5fd7a3f (flexslider)
 =======
 >>>>>>> parent of 5fd7a3f (flexslider)
     </head>

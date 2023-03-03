@@ -14,15 +14,22 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}">
         <link rel="stylesheet" href="{{ asset('vendor/glider-js/glider.min.css')}}">
+<<<<<<< HEAD
           <link rel="stylesheet" href="{{ asset('vendor/flexSlider/flexslider.css')}}">
+=======
+>>>>>>> parent of 5fd7a3f (flexslider)
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{ asset('vendor/glider-js/glider.min.js') }}" defer></script>
+<<<<<<< HEAD
         <script src="{{ asset('vendor/flexSlider/jquery.flexslider-min.js') }}" ></script>
         <script src="{{ asset('vendor/flexSlider/node_modules/jquery/dist/jquery.min.js) }}" ></script>
          </head>
+=======
+    </head>
+>>>>>>> parent of 5fd7a3f (flexslider)
     <body class="font-sans antialiased">
         <x-jet-banner />
 

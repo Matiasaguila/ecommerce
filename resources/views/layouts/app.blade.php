@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}">
         <link rel="stylesheet" href="{{ asset('vendor/glider-js/glider.min.css')}}">
-        <link rel="stylesheet" href="{{ asset('vendor/flexSlider/flexslider.css')}}">
+          <link rel="stylesheet" href="{{ asset('vendor/flexSlider/flexslider.css')}}">
         @livewireStyles
 
         <!-- Scripts -->

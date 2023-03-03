@@ -14,22 +14,15 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css')}}">
         <link rel="stylesheet" href="{{ asset('vendor/glider-js/glider.min.css')}}">
-
-          <link rel="stylesheet" href="{{ asset('vendor/flexSlider/flexslider.css')}}">
-
+        <link rel="stylesheet" href="{{ asset('vendor/flexSlider/flexslider.css')}}">
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{ asset('vendor/glider-js/glider.min.js') }}" defer></script>
-
         <script src="{{ asset('vendor/flexSlider/node_modules/jquery/dist/jquery.js') }}"></script>
         <script src="{{ asset('vendor/flexSlider/jquery.flexslider-min.js') }}"></script>
-
-        <script src="{{ asset('vendor/flexSlider/jquery.flexslider-min.js') }}" ></script>
-        <script src="{{ asset('vendor/flexSlider/node_modules/jquery/dist/jquery.min.js) }}" ></script>
-         </head>
-
+    </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
 

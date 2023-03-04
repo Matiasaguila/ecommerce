@@ -1,4 +1,4 @@
-<<x-app-layout>
+<x-app-layout>
     <div class="container-menu py-8">
         <div class="grid grid-cols-2 gap-6">
             <div>

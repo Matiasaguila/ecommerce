@@ -33,7 +33,7 @@
             </x-jet-secondary-button>
         </div>
         <div class="flex-1">
-            <x-button-
+            <x-button-link
                     x-bind:disabled="$wire.qty > $wire.quantity"
                     x-bind:disabled="!$wire.quantity"
                     wire:click="addItem"

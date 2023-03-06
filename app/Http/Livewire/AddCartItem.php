@@ -12,7 +12,7 @@ class AddCartItem extends Component
     public $qty = 1;
     public $product;
     public $quantity;
-    public $options = ['size_id' => null,'size_id' => null,];
+    public $options = ['color_id' => null,'size_id' => null,];
     public function mount()
     {
         $this->quantity = qty_available($this->product->id);

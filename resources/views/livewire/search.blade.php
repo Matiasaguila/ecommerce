@@ -1,10 +1,10 @@
-<div class="flex-1 relative">
+<div class="flex-1 relative" x-data>
     <x-jet-input wire:model="search" type="text" class="w-full" placeholder="¿Estás buscando algún producto?"></x-jet-input>
 
         <button class="absolute top-0 right-0 w-12 h-full bg-orange-600 flex items-center justify-center rounded-r-md">
             <x-search size="35" color="white"></x-search>
         </button>
-         <div class="absolute w-full mt-1  " >
+         <div class="absolute w-full mt-1 hidden "  :class="{ 'hidden' : !$wire.open }"  @click.away="$wire.open = false">
             <div class="bg-white rounded-lg shadow-lg">
                  <div class="px-4 py-3 space-y-1">
                       @forelse ($products as $product)

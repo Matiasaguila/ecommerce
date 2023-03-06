@@ -20,5 +20,5 @@ protected $table = 'color_size';
     {
         return $this->belongsTo(Size::class);
     }
-    
+
 }

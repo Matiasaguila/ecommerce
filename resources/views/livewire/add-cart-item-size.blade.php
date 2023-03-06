@@ -8,8 +8,16 @@
             @endforeach
         </select>
     </div>
+    <p class="text-gray-700 my-4">
+        <span class="font-semibold text-lg">Stock disponible:</span>
+        @if($quantity)
+            {{ $quantity }}
+        @else
+            {{ $product->stock }}
+        @endif
+    </p>
 
-    <div class="mt-2">
+    <div class="flex">
         <p class="text-xl text-gray-700">Color:</p>
         <select wire:model="color_id" class="form-control w-full">
             <option value="" selected disabled>Seleccione un color</option>

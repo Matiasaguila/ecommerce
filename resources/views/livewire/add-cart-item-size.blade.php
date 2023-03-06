@@ -40,6 +40,7 @@
         <div class="flex-1">
             <x-button-link
                     x-bind:disabled="!$wire.quantity"
+                    x-bind:disabled="$wire.qty > $wire.quantity"
                     wire:click="addItem"
                     wire:loading.attr="disabled"
                     wire:target="addItem"

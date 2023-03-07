@@ -32,11 +32,13 @@
                      </div>
                   </div>
                </td>
-               <td>
-                  <span>{{ $item->price }} &euro;</span>
-                  <a class="ml-6 cursor-pointer hover:text-red-600">
-                     <i class="fas fa-trash"></i>
-                  </a>
+               <td class="text-center">
+                   <div class="flex items-center">
+                       <span>{{ $item->price }} &euro;</span>
+                       <a class="ml-6 cursor-pointer hover:text-red-600">
+                           <i class="fas fa-trash"></i>
+                       </a>
+                   </div>
                </td>
                <td>
                    @if($item->options->size)
@@ -46,7 +48,11 @@
                    @else
                        @livewire('update-cart-item', ['rowId' => $item->rowId], key($item->rowId))
                    @endif               </td>
-               <td></td>
+               <td class="text-center">
+
+                   {{ $item->price * $item->qty }} &euro;
+
+               </td>
             </tr>
          @endforeach
          </tbody>

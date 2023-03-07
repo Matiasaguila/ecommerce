@@ -38,7 +38,12 @@
                        <td class="text-center">
                            <div class="flex items-center">
                                <span>{{ $item->price }} &euro;</span>
-                               <a class="ml-6 cursor-pointer hover:text-red-600">
+
+
+                               <a class="ml-6 cursor-pointer hover:text-red-600"
+                                  wire:click="delete('{{ $item->rowId }}')"
+                                  wire:loading.class="text-red-600 opacity-25"
+                                  wire:target="delete('{{ $item->rowId }}')">
                                    <i class="fas fa-trash"></i>
                                </a>
                            </div>
@@ -77,4 +82,20 @@
 @endif
 
    </section>
+    @if(Cart::count())
+        <div class="bg-white rounded-lg shadow-lg px-6 py-4 mt-4">
+            <div class="flex justify-between items-center">
+                <div class="text-gray-700">
+                    <span class="font-bold text-lg">Total:</span>
+                    {{ Cart::subtotal() }} &euro;
+                </div>
+                <div>
+                    <x-button-link>
+                        Continuar
+                    </x-button-link>
+                </div>
+            </div>
+        </div>
+    @endif
+
 </div>

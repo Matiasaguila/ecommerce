@@ -2,9 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\Login;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Gloudemans\Shoppingcart\Facades\Cart;
+
 
 class MergeTheCartLogout
 {
@@ -21,11 +23,14 @@ class MergeTheCartLogout
     /**
      * Handle the event.
      *
-     * @param  \App\Events\Login  $event
+     * @param  Logout  $event
      * @return void
      */
-    public function handle(Login $event)
+    public function handle(Logout $event)
     {
-        //
+        // borrar registro anterior del registro
+        Cart::erase(auth()->user()->id);
+        // nuevo registro
+        Cart::store(auth()->user()->id);
     }
 }

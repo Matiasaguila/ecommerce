@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\Logout;
+use App\Events\Login;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
@@ -21,10 +21,10 @@ class MergeTheCartLogout
     /**
      * Handle the event.
      *
-     * @param  \App\Events\Logout  $event
+     * @param  \App\Events\Login  $event
      * @return void
      */
-    public function handle(Logout $event)
+    public function handle(Login $event)
     {
         //
     }

@@ -9,7 +9,10 @@ use App\Models\Order;
 
 class OrderController extends Controller
 {
-
+    public function index()
+    {
+        return view('orders.index');
+    }
 
 
     public function show(Order $order)

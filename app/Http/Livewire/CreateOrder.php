@@ -15,7 +15,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 class CreateOrder extends Component
 {
     public $envio_type = 1 ;
-    public $contact, $phone, $address, $references, $shipping_cost = 0;
+    public $contact, $phone, $address, $reference, $shipping_cost = 0;
 
     public $departments, $cities = [], $districts = [];
 
@@ -68,7 +68,7 @@ class CreateOrder extends Component
             $rules['city_id'] = 'required';
             $rules['district_id'] = 'required';
             $rules['address'] = 'required';
-            $rules['references'] = 'required';
+            $rules['reference'] = 'required';
         }
 
         $this->validate($rules);
@@ -89,7 +89,7 @@ class CreateOrder extends Component
             $order->city_id = $this->city_id;
             $order->district_id = $this->district_id;
             $order->address = $this->address;
-            $order->references = $this->references;
+            $order->reference = $this->reference;
          /*   $order->envio = json_encode([
                 'department' => Department::find($this->department_id)->name,
                 'city' => City::find($this->city_id)->name,
@@ -101,9 +101,9 @@ class CreateOrder extends Component
 
         $order->save();
 
-        foreach (Cart::content() as $item) {
-            discount($item);
-        }
+//        foreach (Cart::content() as $item) {
+//            discount($item);
+//        }
 
         Cart::destroy();
 

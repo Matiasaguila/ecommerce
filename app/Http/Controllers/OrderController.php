@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 
 
+
 class OrderController extends Controller
 {
     public function payment(Order $order)
+
     {
-        return view('orders.payment', compact('order'));
+        $items = json_decode($order->content);
+        return view('orders.payment', compact('order', 'items'));
     }
 }

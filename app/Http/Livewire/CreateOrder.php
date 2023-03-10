@@ -101,9 +101,9 @@ class CreateOrder extends Component
 
         $order->save();
 
-//        foreach (Cart::content() as $item) {
-//            discount($item);
-//        }
+       foreach (Cart::content() as $item) {
+           discount($item);
+        }
 
         Cart::destroy();
 

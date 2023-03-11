@@ -19,9 +19,7 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
-        <script src="{{ asset('vendor/glider-js/glider.min.js') }}" defer></script>
-        <script src="{{ asset('vendor/flexslider/node_modules/jquery/dist/jquery.js') }}"></script>
-        <script src="{{ asset('vendor/flexslider/jquery.flexslider-min.js') }}"></script>
+       <script src="{{ asset('vendor/ckeditor5/build/ckeditor.js') }}"></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />

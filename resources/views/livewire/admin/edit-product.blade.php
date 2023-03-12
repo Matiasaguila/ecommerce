@@ -95,7 +95,8 @@
             <x-jet-input-error for="product.quantity" />
         </div>
     @endif
-        <div class="bg-white shadow-xl rounded-lg p-6"><div class="flex justify-end items-center mt-4">
+        <div class="bg-white shadow-xl rounded-lg p-6">
+            <div class="flex justify-end items-center mt-4">
                 <x-jet-action-message class="mr-3" on="saved">
                     Actualizado
                 </x-jet-action-message>

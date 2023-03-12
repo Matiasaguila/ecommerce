@@ -26,6 +26,7 @@ class EditProduct extends Component
         'product.price' => 'required',
         'product.quantity' => 'numeric',
     ];
+    protected $listeners = ['refreshProduct', 'delete'];
     public function mount(Product $product)
     {
         $this->product = $product;
@@ -33,6 +34,8 @@ class EditProduct extends Component
         $this->category_id = $product->subcategory->category->id;
 
         $this->subcategories = Subcategory::where('category_id', $this->category_id)->get();
+        $this->slug = $this->product->slug;
+
         $this->brands = Brand::whereHas('categories', function(Builder $query) {
             $query->where('category_id', $this->category_id);
         })->get();
@@ -63,6 +66,7 @@ public function updatedCategoryId($value)
             }
         }
         $this->validate();
+        $this->product->slug = $this->slug;
         $this->product->save();
         $this->emit('saved');
     }

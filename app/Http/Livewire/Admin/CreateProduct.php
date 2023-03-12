@@ -14,14 +14,20 @@ use App\Models\Subcategory;
 
 class CreateProduct extends Component
 {
-    public $name, $slug, $description, $price, $stock, $status;
+    public $name, $slug, $description, $price, $quantity, $status;
     public $categories, $subcategories=[],$brands=[];
 
     public $category_id = '', $subcategory_id = '', $brand_id = '';
-    public function mount()
-    {
-        $this->categories=Category::all();
-    }
+
+    protected $rules = [
+        'category_id' => 'required',
+        'subcategory_id' => 'required',
+        'name' => 'required',
+        'slug' => 'required|unique:products',
+        'description' => 'required',
+        'brand_id' => 'required',
+        'price' => 'required',
+    ];
     public function updatedCategoryId($value)
     {
         $this->subcategories = Subcategory::where('category_id', $value)->get();
@@ -30,9 +36,24 @@ class CreateProduct extends Component
         })->get();
         $this->reset('subcategory_id', 'brand_id');
     }
-    public function updatedName($value){
+    public function getSubcategoryProperty()
+    {
+        return Subcategory::find($this->subcategory_id);
+    }
+        public function updatedName($value){
         $this->slug = Str::slug($value);
     }
+    public function save()
+    {
+        if ($this->subcategory_id && !$this->subcategory->color && !$this->subcategory->size) {
+            $this->rules['quantity'] = 'required';
+    }
+    $this->validate();
+    }
+    public function mount()
+{
+    $this->categories=Category::all();
+}
 
     public function render()
     {

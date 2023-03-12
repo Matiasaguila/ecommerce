@@ -24,6 +24,7 @@ class EditProduct extends Component
         'product.description' => 'required',
         'product.brand_id' => 'required',
         'product.price' => 'required',
+        'product.quantity' => 'numeric',
     ];
     public function mount(Product $product)
     {
@@ -41,6 +42,15 @@ class EditProduct extends Component
     {
         return Subcategory::find($this->product->subcategory_id);
     }
+public function updatedCategoryId($value)
+{
+    $this->subcategories = Subcategory::where('category_id', $value)->get();
+    $this->brands = Brand::whereHas('categories', function(Builder $query) use ($value) {
+        $query->where('category_id', $value);
+    })->get();
+    $this->product->subcategory_id = '';
+    $this->product->brand_id = '';
+}
     public function render()
     {
         return view('livewire.admin.edit-product')->layout('layouts.admin');

@@ -84,6 +84,8 @@
 
         </div>
     </div>
+    @if($subcategory_id)
+
     @if ($subcategory_id && !$this->subcategory->color && !$this->subcategory->size)
         <div>
             <x-jet-label value="Cantidad" />
@@ -94,6 +96,8 @@
             <x-jet-input-error for="quantity" />
         </div>
     @endif
+    @endif
+
     <div class="flex mt-4">
         <x-jet-button
                 wire:loading.attr="disabled"

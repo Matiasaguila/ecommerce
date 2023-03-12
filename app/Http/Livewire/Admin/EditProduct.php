@@ -51,6 +51,21 @@ public function updatedCategoryId($value)
     $this->product->subcategory_id = '';
     $this->product->brand_id = '';
 }
+    public function updatedProductName($value){
+        $this->product->slug = Str::slug($value);
+    }
+    public function save()
+    {
+        $this->rules['product.slug'] = 'required|unique:products,slug,' . $this->product->id;
+        if ($this->product->subcategory_id) {
+            if (!$this->subcategory->color && !$this->subcategory->size) {
+                $this->rules['product.quantity'] = 'required|numeric';
+            }
+        }
+        $this->validate();
+        $this->product->save();
+        $this->emit('saved');
+    }
     public function render()
     {
         return view('livewire.admin.edit-product')->layout('layouts.admin');

@@ -11,6 +11,7 @@ class SizeProduct extends Component
     public $name_edit;
 
     public $open = false;
+    protected $listeners = ['delete'];
     protected $rules = [
         'name' => 'required'
     ];
@@ -22,6 +23,7 @@ class SizeProduct extends Component
             'name' => $this->name,
         ]);
         $this->product = $this->product->fresh();
+        $this->reset();
     }
     public function edit(Size $size)
     {
@@ -33,6 +35,11 @@ class SizeProduct extends Component
     {
         $sizes = $this->product->sizes;
         return view('livewire.admin.size-product',compact('sizes'));
+    }
+    public function delete(Size $size)
+    {
+        $size->delete();
+        $this->product = $this->product->fresh();
     }
     public function update()
     {

@@ -51,4 +51,5 @@ class SizeProduct extends Component
         $this->product = $this->product->fresh();
         $this->open = false;
     }
+
 }

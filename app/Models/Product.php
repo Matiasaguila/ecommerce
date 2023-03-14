@@ -40,7 +40,7 @@ public function getStockAttribute(){
         return $this->belongsTo(Subcategory::class);
     }
     public function colors(){
-        return $this->belongsToMany(Color::class)->withPivot('quantity');
+        return $this->belongsToMany(Color::class)->withPivot('quantity', 'id');
     }
     public function images(){
         return $this->morphMany(Image::class, 'imageable');

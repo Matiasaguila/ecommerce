@@ -4,18 +4,29 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\Color;
+use App\Models\ColorProduct as TbPivot;
+
 
 
 class ColorProduct extends Component
 {
     public $product, $colors;
     public $color_id, $quantity ;
+    public $pivot, $pivot_color_id, $pivot_quantity;
     public $open = true;
 
     protected $rules = [
         'color_id' => 'required',
         'quantity' => 'required|numeric',
     ];
+
+    public function edit(TbPivot $pivot){
+
+        $this->open = true;
+        $this->pivot = $pivot;
+        $this->pivot_color_id = $pivot->color_id;
+        $this->pivot_quantity = $pivot->quantity;
+    }
 
     public function save(){
         $this->validate();

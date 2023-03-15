@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="{{ asset('vendor/glider-js/glider.min.css')}}">
         <link rel="stylesheet" href="{{ asset('vendor/flexslider/flexslider.css')}}">
         <link rel="stylesheet" href="{{ asset('vendor/sweetalert2/dist/sweetalert2.css') }}">
-
+        <link rel="stylesheet" href="{{ asset('vendor/dropzone/dist/dropzone.css') }}">
         @livewireStyles
 
         <!-- Scripts -->
@@ -27,6 +27,7 @@
         <script src="{{ asset('vendor/ckeditor5/build/ckeditor.js') }}"></script>
         <script src="{{ asset('vendor/ckeditor5/build/translations/es.js') }}"></script>
         <script src="{{ asset('vendor/sweetalert2/dist/sweetalert2.js') }}"></script>
+        <script src="{{ asset('vendor/dropzone/dist/dropzone.js') }}"></script>
 
     </head>
     <body class="font-sans antialiased">

@@ -31,11 +31,7 @@ class SizeProduct extends Component
         $this->size = $size;
         $this->name_edit = $size->name;
     }
-    public function render()
-    {
-        $sizes = $this->product->sizes;
-        return view('livewire.admin.size-product',compact('sizes'));
-    }
+
     public function delete(Size $size)
     {
         $size->delete();
@@ -51,5 +47,9 @@ class SizeProduct extends Component
         $this->product = $this->product->fresh();
         $this->open = false;
     }
-
+    public function render()
+    {
+        $sizes = $this->product->sizes;
+        return view('livewire.admin.size-product',compact('sizes'));
+    }
 }

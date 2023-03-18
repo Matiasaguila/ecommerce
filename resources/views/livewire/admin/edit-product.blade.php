@@ -1,4 +1,16 @@
 <div>
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <h1 class="font-semibold text-xl text-gray-800 leading-tight">
+                    Productos
+                </h1>
+                <x-jet-danger-button wire:click="$emit('deleteProduct')">
+                    Eliminar
+                </x-jet-danger-button>
+            </div>
+        </div>
+    </header>
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-gray-700">
     <h1 class="text-3xl text-center font-semibold mb-8">Complete los datos para crear un producto</h1>
     <div class="mb-4" wire:ignore>
@@ -151,6 +163,8 @@
         @endif
 
     </div>
+
+</div>
     @push('scripts')
         <script>
             Dropzone.options.myAwesomeDropzone = {
@@ -257,5 +271,4 @@
             })
         </script>
     @endpush
-</div>
 </div>

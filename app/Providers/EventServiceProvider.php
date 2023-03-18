@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Event;
 use illuminate\Auth\Events\Login;
 use illuminate\Auth\Events\Logout;
 use illuminate\Auth\Events\Failed;
-
+use App\Models\Product;
+use App\Observers\ProductObserver;
 
 
 class EventServiceProvider extends ServiceProvider
@@ -40,6 +41,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+       Product::observe(ProductObserver::class);
     }
 }

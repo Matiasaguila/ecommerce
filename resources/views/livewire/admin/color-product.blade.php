@@ -1,5 +1,6 @@
 <div>
     <div class="my-12 bg-white shadow-lg rounded-lg p-6">
+
         <div class="mb-6">
             <x-jet-label>
                 Color

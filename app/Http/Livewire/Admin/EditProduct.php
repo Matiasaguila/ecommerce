@@ -44,6 +44,9 @@ class EditProduct extends Component
         })->get();
 
     }
+    public function refreshProduct(){
+        $this->product = $this->product->fresh();
+    }
     public function getSubcategoryProperty()
     {
         return Subcategory::find($this->product->subcategory_id);
@@ -78,6 +81,20 @@ public function updatedCategoryId($value)
         Storage::disk('public')->delete([$image->url]);
         $image->delete();
         $this->product = $this->product->fresh();
+    }
+    public function delete(){
+
+        $images = $this->product->images;
+
+        foreach ($images as $image) {
+            Storage::delete($image->url);
+            $image->delete();
+        }
+
+        $this->product->delete();
+
+        return redirect()->route('admin.index');
+
     }
     public function render()
     {

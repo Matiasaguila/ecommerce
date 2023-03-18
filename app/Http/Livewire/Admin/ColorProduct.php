@@ -13,7 +13,7 @@ class ColorProduct extends Component
     public $product, $colors;
     public $color_id, $quantity ;
     public $pivot, $pivot_color_id, $pivot_quantity;
-    public $open = true;
+    public $open = false;
 
     protected $listeners = ['delete'];
 
@@ -45,11 +45,21 @@ class ColorProduct extends Component
     }
     public function save(){
         $this->validate();
-        $this->product->colors()->attach([
-            $this->color_id => [
-                'quantity' => $this->quantity
-            ]
-        ]);
+        $pivot = TbPivot::where('color_id', $this->color_id)
+            ->where('product_id', $this->product->id)
+            ->first();
+        if ($pivot) {
+            $pivot->quantity += $this->quantity;
+            $pivot->save();
+        } else {
+            $this->product->colors()->attach([
+                $this->color_id => [
+                    'quantity' => $this->quantity
+                ]
+            ]);
+        }
+
+
         $this->reset(['color_id', 'quantity']);
         $this->emit('saved');
         $this->product = $this->product->fresh();

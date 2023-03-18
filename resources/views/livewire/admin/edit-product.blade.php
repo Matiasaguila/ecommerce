@@ -16,7 +16,7 @@
                         <x-jet-danger-button class="absolute right-2 top-2 w-6 h-4"
                                              wire:click="deleteImage({{ $image->id }})" wire:loading.attr="disabled"
                                              wire:target="deleteImage({{ $image->id }})">
-                            x
+
                         </x-jet-danger-button>
                     </li>
                 @endforeach

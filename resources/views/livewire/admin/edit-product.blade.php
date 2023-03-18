@@ -1,3 +1,4 @@
+<div>
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-gray-700">
     <h1 class="text-3xl text-center font-semibold mb-8">Complete los datos para crear un producto</h1>
     <div class="mb-4" wire:ignore>
@@ -23,6 +24,8 @@
             </ul>
         </section>
     @endif
+
+    @livewire('admin.status-product', ['product' => $product], key('status-product-' . $product->id))
 
     <div class="bg-white shadow-xl rounded-lg p-6">
     <div class="grid grid-cols-2 gap-6 mb-4">
@@ -157,7 +160,7 @@
                 dictDefaultMessage: "Mueva una imagen al recuadro",
                 acceptedFiles: 'image/*',
                 paramName: "file", // The name that will be used to transfer the file
-                maxFilesize: 2 // MB
+                maxFilesize: 2, // MB
                 complete: function(file) {
                     this.removeFile(file);
                 },
@@ -255,4 +258,4 @@
         </script>
     @endpush
 </div>
-
+</div>

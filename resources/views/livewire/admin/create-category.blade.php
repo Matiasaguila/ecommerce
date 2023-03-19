@@ -94,8 +94,7 @@
                                 <a class="pr-2 hover:text-blue-600 cursor-pointer"
                                 wire:click="edit('{{$category->slug}}')<<<<">Editar</a>
                                 <a class="pl-2 hover:text-red-600 cursor-pointer"
-                                wire:click="$emit(deleteCategorie', '{{$category->slug}}')">Eliminar</a>
-                            </div>
+                                   wire:click="$emit('deleteCategory', '{{ $category->slug }}')">Eliminar</a>                            </div>
                         </td>
                     </tr>
                 @endforeach
@@ -166,7 +165,7 @@
             </div>
         </x-slot>
         <x-slot name="footer">
-            <x-jet-danger-button wire:loading.attr="disabled" wire:target="editImage">
+            <x-jet-danger-button wire:click="update" wire:loading.attr="disabled" wire:target="editImage, update">
                 Actualizar
             </x-jet-danger-button>
         </x-slot>

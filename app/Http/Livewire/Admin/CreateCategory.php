@@ -91,6 +91,8 @@ $this->emit('saved');
 
     public function edit(Category $category)
     {
+        $this->image = rand();
+        $this->reset('editImage');
         $this->category = $category;
         $this->editForm['open'] = true;
         $this->editForm['name'] = $category->name;

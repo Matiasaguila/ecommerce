@@ -11,11 +11,13 @@ use App\Models\Brand;
 use App\Models\Subcategory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
+use Livewire\WithFileUploads;
 
 
 
 class EditProduct extends Component
 {
+    use WithFileUploads;
     public $product,$categories,$subcategories,$brands;
     public $category_id;
 

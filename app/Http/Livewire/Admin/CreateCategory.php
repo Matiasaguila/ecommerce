@@ -7,13 +7,16 @@ use App\Models\Brand;
 use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
 use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
 
 class CreateCategory extends Component
 {
     use WithFileUploads;
     public $brands,$categories, $image;
-    public $category, $editImage;
+    public $category;
+    public  $rand, $image2;
     protected $listeners = ['delete'];
+    public $editImage;
 
     public $createForm = [
         'name' => null,
@@ -72,7 +75,6 @@ class CreateCategory extends Component
     public function update()
     {
         $rules = [
-
             'editForm.name' => 'required',
             'editForm.slug' => 'required|unique:categories,slug,' . $this->category->id,
             'editForm.icon' => 'required',
@@ -82,6 +84,14 @@ class CreateCategory extends Component
             $rules['editImage'] = 'required|image|max:1024';
         }
         $this->validate($rules);
+        if ($this->editImage) {
+            Storage::disk('public')->delete($this->editForm['image']);
+            $this->editForm['image'] = $this->editImage->store('categories', 'public');
+        }
+        $this->category->update($this->editForm);
+        $this->category->brands()->sync($this->editForm['brands']);
+        $this->reset(['editForm', 'editImage']);
+        $this->getCategories();
 
     }
 
@@ -117,7 +127,9 @@ $this->emit('saved');
 
     public function edit(Category $category)
     {
-        $this->image = rand();
+        $this->image2 = rand();
+        $this->reset(['editImage']);
+        $this->resetValidation();
         $this->reset('editImage');
         $this->category = $category;
         $this->editForm['open'] = true;

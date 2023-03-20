@@ -19,11 +19,12 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'Matias Aguila',
             'email' => 'matias@test.com',
-
-        ])->assignRole($role);
+            'password' => bcrypt('12345678'),
+        ])->assignRole('admin');
         User::factory()->create([
             'name' => 'Carlos Abrisqueta',
             'email' => 'carlos@test.com',
+
         ])->assignRole('admin');
 
         User::factory(100)->create();

@@ -8,6 +8,8 @@ class UserComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.user-component')->layout('layouts.admin');
+
+        $user= User::paginate();
+        return view('livewire.admin.user-component',compact('user'))->layout('layouts.admin');
     }
 }

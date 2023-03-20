@@ -10,6 +10,8 @@ use App\Http\livewire\Admin\ShowCategory;
 use App\Http\livewire\Admin\BrandComponent;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\livewire\Admin\DepartmentComponent;
+use App\Http\livewire\Admin\ShowDepartment;
+
 
 
 
@@ -24,3 +26,4 @@ Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.inde
 Route::get('orders/{order}', [OrderController::class, 'show'])->name('admin.orders.show');
 Route::get('departments', DepartmentComponent::class)->name('admin.departments.index');
 Route::post('product/{product}/files', [ProductController::class, 'files'])->name('admin.products.files');
+Route::get('departments/{department}', ShowDepartment::class)->name('admin.departments.show');

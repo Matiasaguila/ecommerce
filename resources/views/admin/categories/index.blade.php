@@ -1,9 +1,9 @@
 <x-admin-layout>
     <div class="container-menu py-12">
-    @livewire('admin.create-category')
-
+        @livewire('admin.create-category')
     </div>
-    @push('script')
+
+    @push('scripts')
         <script>
             Livewire.on('deleteCategory', categorySlug => {
                 Swal.fire({
@@ -27,6 +27,4 @@
             });
         </script>
     @endpush
-
-
 </x-admin-layout>

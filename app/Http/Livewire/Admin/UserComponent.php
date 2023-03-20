@@ -3,13 +3,23 @@
 namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
+use App\Models\User;
+use Livewire\WithPagination;
 
 class UserComponent extends Component
 {
+    use WithPagination;
+
+    public  $search;
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
     public function render()
     {
-
-        $user= User::paginate();
-        return view('livewire.admin.user-component',compact('user'))->layout('layouts.admin');
+        $users = User::where('name', 'LIKE', "%{$this->search}%")
+            ->orWhere('email', 'LIKE', "%{$this->search}%")
+            ->paginate();
+        return view('livewire.admin.user-component',compact('users'))->layout('layouts.admin');
     }
 }

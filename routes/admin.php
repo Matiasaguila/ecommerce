@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\livewire\Admin\DepartmentComponent;
 use App\Http\livewire\Admin\ShowDepartment;
 use App\Http\livewire\Admin\ShowCity;
+use App\Http\livewire\Admin\UserComponent;
 
 
 
@@ -28,7 +29,7 @@ Route::get('orders/{order}', [OrderController::class, 'show'])->name('admin.orde
 Route::get('departments', DepartmentComponent::class)->name('admin.departments.index');
 Route::get('cities/{city}', ShowCity::class)->name('admin.cities.show');
 Route::get('departments/{department}', ShowDepartment::class)->name('admin.departments.show');
-
+Route::get('users', UserComponent::class)->name('admin.users.index');
 
 Route::post('product/{product}/files', [ProductController::class, 'files'])->name('admin.products.files');
 Route::post('product/{product}/images', [ProductController::class, 'images'])->name('admin.products.images');
